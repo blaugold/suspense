@@ -474,3 +474,12 @@ class SuspendableStatefulElement extends StatefulElement with SuspendableMixin {
     super.markNeedsBuild();
   }
 }
+
+class SuspendableBuilder extends SuspendableWidget {
+  const SuspendableBuilder({super.key, required this.builder});
+
+  final WidgetBuilder builder;
+
+  @override
+  Widget build(BuildContext context) => builder(context);
+}
